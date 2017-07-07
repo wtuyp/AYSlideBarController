@@ -24,6 +24,15 @@
                                                                              style:UIBarButtonItemStylePlain
                                                                             target:(DEMONavigationController *)self.navigationController
                                                                             action:@selector(showMenu)];
+    
+    
+    
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 50)];
+    label.text = @"Second Controller";
+    [label sizeToFit];
+    [self.view addSubview:label];
+    
+    NSLog(@"frame = %@", NSStringFromCGRect(self.view.frame));
 }
 
 @end

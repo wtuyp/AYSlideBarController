@@ -8,7 +8,6 @@
 
 #import "DEMONavigationController.h"
 #import "DEMOMenuViewController.h"
-#import "UIViewController+REFrostedViewController.h"
 
 @interface DEMONavigationController ()
 

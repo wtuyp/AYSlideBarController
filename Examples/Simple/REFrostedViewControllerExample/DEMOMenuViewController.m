@@ -10,7 +10,6 @@
 #import "DEMOHomeViewController.h"
 #import "DEMOSecondViewController.h"
 #import "DEMONavigationController.h"
-#import "UIViewController+REFrostedViewController.h"
 
 @implementation DEMOMenuViewController
 
@@ -48,6 +47,14 @@
         [view addSubview:label];
         view;
     });
+    
+    NSLog(@"frame = %@", NSStringFromCGRect(self.view.frame));
+    
+
+}
+
+- (BOOL)prefersStatusBarHidden {
+    return YES;
 }
 
 #pragma mark -
