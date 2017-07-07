@@ -29,11 +29,11 @@
 
 @interface REFrostedViewController ()
 
-@property (assign, nonatomic) BOOL visible;
-@property (strong, nonatomic) REFrostedContainerViewController *containerViewController;
-@property (strong, nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
-@property (assign, nonatomic) BOOL automaticSize;
-@property (assign, nonatomic) CGSize calculatedMenuViewSize;
+@property (nonatomic, assign) BOOL visible;
+@property (nonatomic, strong) REFrostedContainerViewController *containerViewController;
+@property (nonatomic, strong) UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic, assign) BOOL automaticSize;
+@property (nonatomic, assign) CGSize calculatedMenuViewSize;
 
 @end
 
@@ -80,7 +80,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self re_displayController:self.contentViewController frame:self.view.bounds];
+    [self re_addController:self.contentViewController frame:self.view.bounds];
 }
 
 - (UIViewController *)childViewControllerForStatusBarStyle {
@@ -98,11 +98,11 @@
     }
     
     if (_contentViewController) {
-        [self re_hideController:_contentViewController];
+        [self re_removeController:_contentViewController];
     }
     
     _contentViewController = contentViewController;
-    [self re_displayController:_contentViewController frame:self.view.bounds];
+    [self re_addController:_contentViewController frame:self.view.bounds];
     
     if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
         [self performSelector:@selector(setNeedsStatusBarAppearanceUpdate)];
@@ -115,7 +115,7 @@
     }
     
     if (_menuViewController) {
-        [self re_hideController:_menuViewController];
+        [self re_removeController:_menuViewController];
     }
     
     _menuViewController = menuViewController;
@@ -154,7 +154,7 @@
                                                  _menuViewSize.height > 0 ? _menuViewSize.height : self.contentViewController.view.frame.size.height);
     }
     
-    [self re_displayController:self.containerViewController frame:self.contentViewController.view.frame];
+    [self re_addController:self.containerViewController frame:self.contentViewController.view.frame];
 }
 
 - (void)hideMenuViewController {
@@ -174,14 +174,14 @@
 }
 
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)recognizer {
-    if ([self.delegate respondsToSelector:@selector(frostedViewController:didRecognizePanGesture:)])
-        [self.delegate frostedViewController:self didRecognizePanGesture:recognizer];
-    
     if (!self.panGestureEnabled)
         return;
     
     if (recognizer.state == UIGestureRecognizerStateBegan) {
         [self presentMenuViewControllerWithAnimatedApperance:NO];
+        if ([self.delegate respondsToSelector:@selector(frostedViewController:didRecognizePanGesture:)]) {
+            [self.delegate frostedViewController:self didRecognizePanGesture:recognizer];
+        }
     }
     
     [self.containerViewController panGestureRecognized:recognizer];
@@ -223,14 +223,14 @@
 
 @implementation UIViewController (REFrostedViewController)
 
-- (void)re_displayController:(UIViewController *)controller frame:(CGRect)frame {
+- (void)re_addController:(UIViewController *)controller frame:(CGRect)frame {
     [self addChildViewController:controller];
     controller.view.frame = frame;
     [self.view addSubview:controller.view];
     [controller didMoveToParentViewController:self];
 }
 
-- (void)re_hideController:(UIViewController *)controller {
+- (void)re_removeController:(UIViewController *)controller {
     [controller willMoveToParentViewController:nil];
     [controller removeFromParentViewController];
     [controller.view removeFromSuperview];

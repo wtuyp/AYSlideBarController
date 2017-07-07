@@ -29,9 +29,9 @@
 
 @interface REFrostedContainerViewController : UIViewController
 
-@property (weak, nonatomic) REFrostedViewController *frostedViewController;
-@property (assign, nonatomic) BOOL animateApperance;
-@property (readonly, nonatomic) UIView *containerView;
+@property (nonatomic, weak) REFrostedViewController *frostedViewController;
+@property (nonatomic, assign) BOOL animateApperance;
+@property (nonatomic, readonly) UIView *containerView;
 
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)recognizer;
 - (void)hide;

@@ -23,6 +23,7 @@
 		3032B8F71805AB1800064F85 /* REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B8EF1805AB1800064F85 /* REFrostedViewController.m */; };
 		307EEC5C17EB27F00050EE33 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307EEC5B17EB27F00050EE33 /* Accelerate.framework */; };
 		307EEC5E17EB27F50050EE33 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307EEC5D17EB27F50050EE33 /* QuartzCore.framework */; };
+		EB4969231F0F2F34005F9FFA /* AYSlideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4969221F0F2F34005F9FFA /* AYSlideBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,8 @@
 		3032B8EF1805AB1800064F85 /* REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedViewController.m; sourceTree = "<group>"; };
 		307EEC5B17EB27F00050EE33 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		307EEC5D17EB27F50050EE33 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		EB4969211F0F2F34005F9FFA /* AYSlideBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYSlideBarController.h; sourceTree = "<group>"; };
+		EB4969221F0F2F34005F9FFA /* AYSlideBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYSlideBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 		3010B53017E9FA67006791FB = {
 			isa = PBXGroup;
 			children = (
+				EB4969211F0F2F34005F9FFA /* AYSlideBarController.h */,
+				EB4969221F0F2F34005F9FFA /* AYSlideBarController.m */,
 				3032B8EB1805AB1800064F85 /* REFrostedViewController */,
 				3010B54217E9FA67006791FB /* REFrostedViewControllerExample */,
 				3010B53B17E9FA67006791FB /* Frameworks */,
@@ -219,6 +224,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3010B57617E9FAAA006791FB /* DEMONavigationController.m in Sources */,
+				EB4969231F0F2F34005F9FFA /* AYSlideBarController.m in Sources */,
 				3032B8F71805AB1800064F85 /* REFrostedViewController.m in Sources */,
 				3010B57017E9FA8C006791FB /* DEMOHomeViewController.m in Sources */,
 				3010B54917E9FA67006791FB /* main.m in Sources */,
@@ -321,7 +327,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "REFrostedViewControllerExample/REFrostedViewControllerExample-Prefix.pch";
 				INFOPLIST_FILE = "REFrostedViewControllerExample/REFrostedViewControllerExample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -336,7 +342,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "REFrostedViewControllerExample/REFrostedViewControllerExample-Prefix.pch";
 				INFOPLIST_FILE = "REFrostedViewControllerExample/REFrostedViewControllerExample-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

@@ -10,6 +10,7 @@
 #import "DEMONavigationController.h"
 #import "DEMOHomeViewController.h"
 #import "DEMOMenuViewController.h"
+#import "AYSlideBarController.h"
 
 @implementation DEMOAppDelegate
 
@@ -25,9 +26,13 @@
     
     // Create frosted view controller
     //
-    REFrostedViewController *frostedViewController = [[REFrostedViewController alloc] initWithContentViewController:navigationController menuViewController:menuController];
-    frostedViewController.direction = REFrostedViewControllerDirectionLeft;
-    frostedViewController.delegate = self;
+//    REFrostedViewController *frostedViewController = [[REFrostedViewController alloc] initWithContentViewController:navigationController menuViewController:menuController];
+//    frostedViewController.direction = REFrostedViewControllerDirectionLeft;
+//    frostedViewController.delegate = self;
+    
+    AYSlideBarController *frostedViewController = [[AYSlideBarController alloc] initWithContentViewController:navigationController menuViewController:menuController];
+    frostedViewController.position = AYSlideBarControllerPositionLeft;
+    frostedViewController.delegate = (id<AYSlideBarControllerDelegate>)self;
     
     // Make it a root controller
     //
@@ -39,7 +44,7 @@
 
 - (void)frostedViewController:(REFrostedViewController *)frostedViewController didRecognizePanGesture:(UIPanGestureRecognizer *)recognizer
 {
-    
+    NSLog(@"didRecognizePanGesture");
 }
 
 - (void)frostedViewController:(REFrostedViewController *)frostedViewController willShowMenuViewController:(UIViewController *)menuViewController
@@ -62,4 +67,19 @@
     NSLog(@"didHideMenuViewController");
 }
 
+- (void)slideBarController:(AYSlideBarController *)slideBarController didRecognizePanGesture:(UIPanGestureRecognizer *)recognizer {
+    NSLog(@"didRecognizePanGesture");
+}
+- (void)slideBarController:(AYSlideBarController *)slideBarController willShowMenuViewController:(UIViewController *)menuViewController {
+    NSLog(@"willShowMenuViewController");
+}
+- (void)slideBarController:(AYSlideBarController *)slideBarController didShowMenuViewController:(UIViewController *)menuViewController {
+    NSLog(@"didShowMenuViewController");
+}
+- (void)slideBarController:(AYSlideBarController *)slideBarController willHideMenuViewController:(UIViewController *)menuViewController {
+    NSLog(@"willHideMenuViewController");
+}
+- (void)slideBarController:(AYSlideBarController *)slideBarController didHideMenuViewController:(UIViewController *)menuViewController {
+    NSLog(@"didHideMenuViewController");
+}
 @end

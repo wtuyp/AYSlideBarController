@@ -39,7 +39,11 @@
     [btn addTarget:self action:@selector(nextBtnDidClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
-//    [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
+    UIScrollView *view = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 64, self.view.bounds.size.width, 100)];
+    view.contentSize = CGSizeMake(self.view.bounds.size.width * 20, view.bounds.size.height);
+    view.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.5];
+    view.bounces = NO;
+    [self.view addSubview:view];
 
 }
 
@@ -50,6 +54,9 @@
     
 //    [self.frostedViewController setMenuViewSize:CGSizeMake(100, 200)];
 //    self.frostedViewController.menuViewWidth = 100;
+    
+//    self.slideBarController.menuViewSize = CGSizeMake(100, 200);
+    self.slideBarController.menuViewWidth = 100;
 }
 
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)sender

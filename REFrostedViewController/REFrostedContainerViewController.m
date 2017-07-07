@@ -28,16 +28,16 @@
 
 @interface REFrostedContainerViewController ()
 
-@property (strong, readwrite, nonatomic) NSMutableArray *backgroundViews;
-@property (strong, readwrite, nonatomic) UIView *containerView;
-@property (assign, readwrite, nonatomic) CGPoint containerOrigin;
+@property (nonatomic, strong) NSMutableArray *backgroundViews;
+@property (nonatomic, strong) UIView *containerView;
+@property (nonatomic, assign) CGPoint containerOrigin;
 
 @end
 
 @interface REFrostedViewController ()
 
-@property (assign, readwrite, nonatomic) BOOL visible;
-@property (assign, readwrite, nonatomic) CGSize calculatedMenuViewSize;
+@property (nonatomic, assign) BOOL visible;
+@property (nonatomic, assign) CGSize calculatedMenuViewSize;
 
 @end
 
@@ -216,7 +216,7 @@
     
     void (^completionHandlerBlock)(BOOL finished) = ^(BOOL finished) {
         self.frostedViewController.visible = NO;
-        [self.frostedViewController re_hideController:self];
+        [self.frostedViewController re_removeController:self];
         
         if ([self.frostedViewController.delegate respondsToSelector:@selector(frostedViewController:didHideMenuViewController:)]) {
             [self.frostedViewController.delegate frostedViewController:self.frostedViewController didHideMenuViewController:self.frostedViewController.menuViewController];
@@ -261,13 +261,6 @@
 }
 
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)recognizer {
-    if ([self.frostedViewController.delegate respondsToSelector:@selector(frostedViewController:didRecognizePanGesture:)]) {
-        [self.frostedViewController.delegate frostedViewController:self.frostedViewController didRecognizePanGesture:recognizer];
-    }
-    
-    if (!self.frostedViewController.panGestureEnabled)
-        return;
-    
     CGPoint point = [recognizer translationInView:self.view];
     
     if (recognizer.state == UIGestureRecognizerStateBegan) {
@@ -342,6 +335,7 @@
     }
 }
 
+#pragma mark - Rotation handler
 - (void)fixLayoutWithDuration:(NSTimeInterval)duration {
     if (self.frostedViewController.direction == REFrostedViewControllerDirectionLeft) {
         [self setContainerFrame:CGRectMake(0, 0, self.frostedViewController.calculatedMenuViewSize.width, self.frostedViewController.calculatedMenuViewSize.height)];

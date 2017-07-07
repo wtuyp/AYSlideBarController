@@ -47,34 +47,36 @@ typedef NS_ENUM(NSInteger, REFrostedViewControllerDirection) {
 
 @interface REFrostedViewController : UIViewController
 
-@property (readonly, nonatomic) UIPanGestureRecognizer *panGestureRecognizer;
-@property (assign, nonatomic) BOOL panGestureEnabled;
-@property (assign, nonatomic) REFrostedViewControllerDirection direction;
+@property (nonatomic, strong) UIViewController *contentViewController;
+@property (nonatomic, strong) UIViewController *menuViewController;
+@property (nonatomic, assign) REFrostedViewControllerDirection direction;
+@property (nonatomic, weak) id<REFrostedViewControllerDelegate> delegate;
 
-@property (assign, nonatomic) CGFloat backgroundAlpha;          //default : black 0.3
-@property (assign, nonatomic) NSTimeInterval animationDuration;
-@property (assign, nonatomic) BOOL limitMenuViewSize;
-@property (assign, nonatomic) CGFloat menuViewWidth;
-@property (assign, nonatomic) CGSize menuViewSize;
+@property (nonatomic, assign) CGFloat menuViewWidth;
+@property (nonatomic, assign) CGSize menuViewSize;
 
-@property (weak, nonatomic) id<REFrostedViewControllerDelegate> delegate;
-@property (strong, nonatomic) UIViewController *contentViewController;
-@property (strong, nonatomic) UIViewController *menuViewController;
+@property (nonatomic, readonly) UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic, assign) BOOL panGestureEnabled;
 
-- (instancetype)initWithContentViewController:(UIViewController *)contentViewController menuViewController:(UIViewController *)menuViewController;
+@property (nonatomic, assign) CGFloat backgroundAlpha;          //default : black 0.3
+@property (nonatomic, assign) NSTimeInterval animationDuration;
+
+- (instancetype)initWithContentViewController:(UIViewController *)contentViewController
+                           menuViewController:(UIViewController *)menuViewController;
 - (void)presentMenuViewController;
 - (void)hideMenuViewController;
-- (void)resizeMenuViewControllerToSize:(CGSize)size;
 - (void)hideMenuViewControllerWithCompletionHandler:(void(^)(void))completionHandler;
+
+- (void)resizeMenuViewControllerToSize:(CGSize)size;
 - (void)panGestureRecognized:(UIPanGestureRecognizer *)recognizer;
 
 @end
 
 @interface UIViewController (REFrostedViewController)
 
-@property (readonly, nonatomic) REFrostedViewController *frostedViewController;
+@property (nonatomic, readonly) REFrostedViewController *frostedViewController;
 
-- (void)re_displayController:(UIViewController *)controller frame:(CGRect)frame;
-- (void)re_hideController:(UIViewController *)controller;
+- (void)re_addController:(UIViewController *)controller frame:(CGRect)frame;
+- (void)re_removeController:(UIViewController *)controller;
 
 @end
