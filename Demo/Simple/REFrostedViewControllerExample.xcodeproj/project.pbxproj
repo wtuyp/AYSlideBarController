@@ -21,7 +21,7 @@
 		3010B57917E9FAFA006791FB /* avatar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3010B57817E9FAFA006791FB /* avatar@2x.jpg */; };
 		307EEC5C17EB27F00050EE33 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307EEC5B17EB27F00050EE33 /* Accelerate.framework */; };
 		307EEC5E17EB27F50050EE33 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307EEC5D17EB27F50050EE33 /* QuartzCore.framework */; };
-		EB4969231F0F2F34005F9FFA /* AYSlideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4969221F0F2F34005F9FFA /* AYSlideBarController.m */; };
+		EBE156181F1327F100D884BC /* AYSlideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBE156171F1327F100D884BC /* AYSlideBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,8 +48,8 @@
 		3010B57817E9FAFA006791FB /* avatar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "avatar@2x.jpg"; sourceTree = "<group>"; };
 		307EEC5B17EB27F00050EE33 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		307EEC5D17EB27F50050EE33 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		EB4969211F0F2F34005F9FFA /* AYSlideBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYSlideBarController.h; sourceTree = "<group>"; };
-		EB4969221F0F2F34005F9FFA /* AYSlideBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYSlideBarController.m; sourceTree = "<group>"; };
+		EBE156161F1327F100D884BC /* AYSlideBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYSlideBarController.h; sourceTree = "<group>"; };
+		EBE156171F1327F100D884BC /* AYSlideBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AYSlideBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +71,7 @@
 		3010B53017E9FA67006791FB = {
 			isa = PBXGroup;
 			children = (
-				EB4969211F0F2F34005F9FFA /* AYSlideBarController.h */,
-				EB4969221F0F2F34005F9FFA /* AYSlideBarController.m */,
+				EBE156151F1327F100D884BC /* AYSlideBarController */,
 				3010B54217E9FA67006791FB /* REFrostedViewControllerExample */,
 				3010B53B17E9FA67006791FB /* Frameworks */,
 				3010B53A17E9FA67006791FB /* Products */,
@@ -137,6 +136,16 @@
 				3010B57217E9FA96006791FB /* DEMOSecondViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		EBE156151F1327F100D884BC /* AYSlideBarController */ = {
+			isa = PBXGroup;
+			children = (
+				EBE156161F1327F100D884BC /* AYSlideBarController.h */,
+				EBE156171F1327F100D884BC /* AYSlideBarController.m */,
+			);
+			name = AYSlideBarController;
+			path = ../../AYSlideBarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,8 +213,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBE156181F1327F100D884BC /* AYSlideBarController.m in Sources */,
 				3010B57617E9FAAA006791FB /* DEMONavigationController.m in Sources */,
-				EB4969231F0F2F34005F9FFA /* AYSlideBarController.m in Sources */,
 				3010B57017E9FA8C006791FB /* DEMOHomeViewController.m in Sources */,
 				3010B54917E9FA67006791FB /* main.m in Sources */,
 				3010B57317E9FA96006791FB /* DEMOSecondViewController.m in Sources */,
