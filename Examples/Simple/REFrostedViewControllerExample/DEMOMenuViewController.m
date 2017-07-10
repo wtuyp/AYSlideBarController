@@ -100,14 +100,16 @@
     if (indexPath.section == 0 && indexPath.row == 0) {
         DEMOHomeViewController *homeViewController = [[DEMOHomeViewController alloc] init];
         DEMONavigationController *navigationController = [[DEMONavigationController alloc] initWithRootViewController:homeViewController];
-        self.frostedViewController.contentViewController = navigationController;
-    } else {
+        self.slideBarController.contentViewController = navigationController;
+    } else if(indexPath.section == 0) {
         DEMOSecondViewController *secondViewController = [[DEMOSecondViewController alloc] init];
         DEMONavigationController *navigationController = [[DEMONavigationController alloc] initWithRootViewController:secondViewController];
-        self.frostedViewController.contentViewController = navigationController;
+        self.slideBarController.contentViewController = navigationController;
+    } else {
+        self.slideBarController.menuViewController = [[DEMOSecondViewController alloc] init];
     }
     
-    [self.frostedViewController hideMenuViewController];
+    [self.slideBarController hideMenuViewController];
 }
 
 #pragma mark -

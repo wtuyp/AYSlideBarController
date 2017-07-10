@@ -7,6 +7,7 @@
 //
 
 #import "DEMOSecondViewController.h"
+#import "DEMOMenuViewController.h"
 #import "DEMONavigationController.h"
 
 @interface DEMOSecondViewController ()
@@ -31,8 +32,17 @@
     label.text = @"Second Controller";
     [label sizeToFit];
     [self.view addSubview:label];
-    
-    NSLog(@"frame = %@", NSStringFromCGRect(self.view.frame));
+
+    UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [btn setTitle:@"reset menu" forState:UIControlStateNormal];
+    [btn sizeToFit];
+    btn.center = self.view.center;
+    [btn addTarget:self action:@selector(nextBtnDidClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:btn];
+}
+
+- (void)nextBtnDidClick:(UIButton *)sender {
+    self.slideBarController.menuViewController = [[DEMOMenuViewController alloc] init];
 }
 
 @end

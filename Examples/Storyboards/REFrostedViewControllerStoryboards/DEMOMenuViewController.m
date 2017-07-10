@@ -9,7 +9,6 @@
 #import "DEMOMenuViewController.h"
 #import "DEMOHomeViewController.h"
 #import "DEMOSecondViewController.h"
-#import "UIViewController+REFrostedViewController.h"
 #import "DEMONavigationController.h"
 
 @interface DEMOMenuViewController ()
@@ -104,8 +103,8 @@
         navigationController.viewControllers = @[secondViewController];
     }
     
-    self.frostedViewController.contentViewController = navigationController;
-    [self.frostedViewController hideMenuViewController];
+    self.slideBarController.contentViewController = navigationController;
+    [self.slideBarController hideMenuViewController];
 }
 
 #pragma mark -

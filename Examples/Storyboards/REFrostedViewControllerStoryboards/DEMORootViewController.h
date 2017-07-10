@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "REFrostedViewController.h"
-
-@interface DEMORootViewController : REFrostedViewController
+#import "AYSlideBarController.h"
+@interface DEMORootViewController : AYSlideBarController
 
 @end

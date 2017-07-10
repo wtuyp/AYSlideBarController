@@ -9,7 +9,6 @@
 #import "DEMOHomeViewController.h"
 #import "DEMONavigationController.h"
 #import "DEMOSecondViewController.h"
-#import "REFrostedViewController.h"
 
 @interface DEMOHomeViewController ()
 
@@ -49,26 +48,7 @@
 
 - (void)nextBtnDidClick:(UIButton *)sender {
 //    [self.navigationController pushViewController:[[DEMOSecondViewController alloc] init] animated:YES];
-//    self.frostedViewController.menuViewController = [[DEMOSecondViewController alloc] init];
-//    self.frostedViewController.contentViewController = [[DEMONavigationController alloc] initWithRootViewController:[[DEMOSecondViewController alloc] init]];
-    
-//    [self.frostedViewController setMenuViewSize:CGSizeMake(100, 200)];
-//    self.frostedViewController.menuViewWidth = 100;
-    
-//    self.slideBarController.menuViewSize = CGSizeMake(100, 200);
-    self.slideBarController.menuViewWidth = 100;
-}
-
-- (void)panGestureRecognized:(UIPanGestureRecognizer *)sender
-{
-    // Dismiss keyboard (optional)
-    //
-    [self.view endEditing:YES];
-    [self.frostedViewController.view endEditing:YES];
-    
-    // Present the view controller
-    //
-    [self.frostedViewController panGestureRecognized:sender];
+    self.slideBarController.menuViewSize = CGSizeMake(100, 200);
 }
 
 @end

@@ -26,47 +26,19 @@
     
     // Create frosted view controller
     //
-//    REFrostedViewController *frostedViewController = [[REFrostedViewController alloc] initWithContentViewController:navigationController menuViewController:menuController];
-//    frostedViewController.direction = REFrostedViewControllerDirectionLeft;
-//    frostedViewController.delegate = self;
-    
-    AYSlideBarController *frostedViewController = [[AYSlideBarController alloc] initWithContentViewController:navigationController menuViewController:menuController];
-    frostedViewController.position = AYSlideBarControllerPositionLeft;
-    frostedViewController.delegate = (id<AYSlideBarControllerDelegate>)self;
+    AYSlideBarController *slideBarController = [[AYSlideBarController alloc] initWithContentViewController:navigationController menuViewController:menuController];
+    slideBarController.position = AYSlideBarControllerPositionLeft;
+    slideBarController.delegate = (id<AYSlideBarControllerDelegate>)self;
     
     // Make it a root controller
     //
-    self.window.rootViewController = frostedViewController;
+    self.window.rootViewController = slideBarController;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
 }
 
-- (void)frostedViewController:(REFrostedViewController *)frostedViewController didRecognizePanGesture:(UIPanGestureRecognizer *)recognizer
-{
-    NSLog(@"didRecognizePanGesture");
-}
-
-- (void)frostedViewController:(REFrostedViewController *)frostedViewController willShowMenuViewController:(UIViewController *)menuViewController
-{
-    NSLog(@"willShowMenuViewController");
-}
-
-- (void)frostedViewController:(REFrostedViewController *)frostedViewController didShowMenuViewController:(UIViewController *)menuViewController
-{
-    NSLog(@"didShowMenuViewController");
-}
-
-- (void)frostedViewController:(REFrostedViewController *)frostedViewController willHideMenuViewController:(UIViewController *)menuViewController
-{
-    NSLog(@"willHideMenuViewController");
-}
-
-- (void)frostedViewController:(REFrostedViewController *)frostedViewController didHideMenuViewController:(UIViewController *)menuViewController
-{
-    NSLog(@"didHideMenuViewController");
-}
-
+#pragma mark - AYSlideBarControllerDelegate
 - (void)slideBarController:(AYSlideBarController *)slideBarController didRecognizePanGesture:(UIPanGestureRecognizer *)recognizer {
     NSLog(@"didRecognizePanGesture");
 }
@@ -82,4 +54,5 @@
 - (void)slideBarController:(AYSlideBarController *)slideBarController didHideMenuViewController:(UIViewController *)menuViewController {
     NSLog(@"didHideMenuViewController");
 }
+
 @end

@@ -19,8 +19,6 @@
 		3010B57317E9FA96006791FB /* DEMOSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3010B57217E9FA96006791FB /* DEMOSecondViewController.m */; };
 		3010B57617E9FAAA006791FB /* DEMONavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3010B57517E9FAAA006791FB /* DEMONavigationController.m */; };
 		3010B57917E9FAFA006791FB /* avatar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3010B57817E9FAFA006791FB /* avatar@2x.jpg */; };
-		3032B8F61805AB1800064F85 /* REFrostedContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B8ED1805AB1800064F85 /* REFrostedContainerViewController.m */; };
-		3032B8F71805AB1800064F85 /* REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3032B8EF1805AB1800064F85 /* REFrostedViewController.m */; };
 		307EEC5C17EB27F00050EE33 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307EEC5B17EB27F00050EE33 /* Accelerate.framework */; };
 		307EEC5E17EB27F50050EE33 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 307EEC5D17EB27F50050EE33 /* QuartzCore.framework */; };
 		EB4969231F0F2F34005F9FFA /* AYSlideBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4969221F0F2F34005F9FFA /* AYSlideBarController.m */; };
@@ -48,10 +46,6 @@
 		3010B57417E9FAAA006791FB /* DEMONavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMONavigationController.h; sourceTree = "<group>"; };
 		3010B57517E9FAAA006791FB /* DEMONavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMONavigationController.m; sourceTree = "<group>"; };
 		3010B57817E9FAFA006791FB /* avatar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "avatar@2x.jpg"; sourceTree = "<group>"; };
-		3032B8EC1805AB1800064F85 /* REFrostedContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedContainerViewController.h; sourceTree = "<group>"; };
-		3032B8ED1805AB1800064F85 /* REFrostedContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedContainerViewController.m; sourceTree = "<group>"; };
-		3032B8EE1805AB1800064F85 /* REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedViewController.h; sourceTree = "<group>"; };
-		3032B8EF1805AB1800064F85 /* REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedViewController.m; sourceTree = "<group>"; };
 		307EEC5B17EB27F00050EE33 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		307EEC5D17EB27F50050EE33 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EB4969211F0F2F34005F9FFA /* AYSlideBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AYSlideBarController.h; sourceTree = "<group>"; };
@@ -79,7 +73,6 @@
 			children = (
 				EB4969211F0F2F34005F9FFA /* AYSlideBarController.h */,
 				EB4969221F0F2F34005F9FFA /* AYSlideBarController.m */,
-				3032B8EB1805AB1800064F85 /* REFrostedViewController */,
 				3010B54217E9FA67006791FB /* REFrostedViewControllerExample */,
 				3010B53B17E9FA67006791FB /* Frameworks */,
 				3010B53A17E9FA67006791FB /* Products */,
@@ -144,18 +137,6 @@
 				3010B57217E9FA96006791FB /* DEMOSecondViewController.m */,
 			);
 			name = Controllers;
-			sourceTree = "<group>";
-		};
-		3032B8EB1805AB1800064F85 /* REFrostedViewController */ = {
-			isa = PBXGroup;
-			children = (
-				3032B8EC1805AB1800064F85 /* REFrostedContainerViewController.h */,
-				3032B8ED1805AB1800064F85 /* REFrostedContainerViewController.m */,
-				3032B8EE1805AB1800064F85 /* REFrostedViewController.h */,
-				3032B8EF1805AB1800064F85 /* REFrostedViewController.m */,
-			);
-			name = REFrostedViewController;
-			path = ../../REFrostedViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,13 +206,11 @@
 			files = (
 				3010B57617E9FAAA006791FB /* DEMONavigationController.m in Sources */,
 				EB4969231F0F2F34005F9FFA /* AYSlideBarController.m in Sources */,
-				3032B8F71805AB1800064F85 /* REFrostedViewController.m in Sources */,
 				3010B57017E9FA8C006791FB /* DEMOHomeViewController.m in Sources */,
 				3010B54917E9FA67006791FB /* main.m in Sources */,
 				3010B57317E9FA96006791FB /* DEMOSecondViewController.m in Sources */,
 				3010B54D17E9FA67006791FB /* DEMOAppDelegate.m in Sources */,
 				3010B56D17E9FA7C006791FB /* DEMOMenuViewController.m in Sources */,
-				3032B8F61805AB1800064F85 /* REFrostedContainerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
